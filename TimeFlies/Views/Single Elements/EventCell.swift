@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct EventCell: View {
-    let event: Event
-    
+    @StateObject private var viewModel: EventCellViewModel
+
+    init(event: Event) {
+        self._viewModel = StateObject(wrappedValue: EventCellViewModel(event: event))
+    }
+
     var body: some View {
         HStack {
-            Text(event.wrappedName)
+            Text(viewModel.name)
             Spacer()
-            Text(event.wrappedDate.formatted(date: .abbreviated, time: .omitted))
+            Text(viewModel.formattedDate)
         }
     }
 }
