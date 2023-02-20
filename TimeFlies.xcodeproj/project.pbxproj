@@ -15,6 +15,7 @@
 		D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAB29A4101D001B13D0 /* Event+CoreDataClass.swift */; };
 		D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAC29A4101D001B13D0 /* Event+CoreDataProperties.swift */; };
 		D404DAB029A410F8001B13D0 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAF29A410F8001B13D0 /* PersistenceController.swift */; };
+		D404DAB429A41982001B13D0 /* TimeFliesDataManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAB329A41982001B13D0 /* TimeFliesDataManaging.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D404DAAB29A4101D001B13D0 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D404DAAC29A4101D001B13D0 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D404DAAF29A410F8001B13D0 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		D404DAB329A41982001B13D0 /* TimeFliesDataManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFliesDataManaging.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				D404DAAF29A410F8001B13D0 /* PersistenceController.swift */,
+				D404DAB329A41982001B13D0 /* TimeFliesDataManaging.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				D404DAB029A410F8001B13D0 /* PersistenceController.swift in Sources */,
 				D404DA7329A40D35001B13D0 /* ContentView.swift in Sources */,
 				D404DA7129A40D35001B13D0 /* TimeFliesApp.swift in Sources */,
+				D404DAB429A41982001B13D0 /* TimeFliesDataManaging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
