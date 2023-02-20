@@ -10,6 +10,7 @@ import Foundation
 class ContentViewViewModel: ObservableObject {
     private let dataManager: any TimeFliesDataManaging
     @Published private(set) var events: [Event] = []
+    @Published var showAddEventSheet = false
 
     init(dataManager: any TimeFliesDataManaging) {
         self.dataManager = dataManager

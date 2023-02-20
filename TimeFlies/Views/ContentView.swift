@@ -15,9 +15,29 @@ struct ContentView: View {
     }
 
     var body: some View {
-        List {
-            ForEach(viewModel.events) {
-                EventCell(event: $0)
+        NavigationView {
+            List {
+                ForEach(viewModel.events) {
+                    EventCell(event: $0)
+                }
+            }
+            .navigationTitle("Time Flies")
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Button {
+                        viewModel.showAddEventSheet.toggle()
+                    } label: {
+                        Label {
+                            Text("Add Event")
+                        } icon: {
+                            Image(systemName: "plus.circle.fill")
+                        }
+                        .labelStyle(.titleAndIcon)
+                    }
+                }
+            }
+            .sheet(isPresented: $viewModel.showAddEventSheet) {
+                EmptyView()
             }
         }
         .task {
