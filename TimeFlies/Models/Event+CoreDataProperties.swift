@@ -16,6 +16,14 @@ public extension Event {
 
     @NSManaged var name: String?
     @NSManaged var date: Date?
+
+    var wrappedName: String {
+        name ?? "Unknown Name"
+    }
+
+    var wrappedDate: Date {
+        date ?? Date.now
+    }
 }
 
 extension Event: Identifiable {}
