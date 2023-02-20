@@ -11,6 +11,9 @@
 		D404DA7329A40D35001B13D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DA7229A40D35001B13D0 /* ContentView.swift */; };
 		D404DA7529A40D36001B13D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D404DA7429A40D36001B13D0 /* Assets.xcassets */; };
 		D404DA7829A40D36001B13D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D404DA7729A40D36001B13D0 /* Preview Assets.xcassets */; };
+		D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D404DAA829A40FDD001B13D0 /* TimeFlies.xcdatamodeld */; };
+		D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAB29A4101D001B13D0 /* Event+CoreDataClass.swift */; };
+		D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAC29A4101D001B13D0 /* Event+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		D404DA7229A40D35001B13D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D404DA7429A40D36001B13D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D404DA7729A40D36001B13D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D404DAA929A40FDD001B13D0 /* TimeFlies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeFlies.xcdatamodel; sourceTree = "<group>"; };
+		D404DAAB29A4101D001B13D0 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D404DAAC29A4101D001B13D0 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 		D404DA7E29A40D97001B13D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D404DAAB29A4101D001B13D0 /* Event+CoreDataClass.swift */,
+				D404DAAC29A4101D001B13D0 /* Event+CoreDataProperties.swift */,
+				D404DAA829A40FDD001B13D0 /* TimeFlies.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +178,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */,
+				D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */,
+				D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */,
 				D404DA7329A40D35001B13D0 /* ContentView.swift in Sources */,
 				D404DA7129A40D35001B13D0 /* TimeFliesApp.swift in Sources */,
 			);
@@ -371,6 +383,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D404DAA829A40FDD001B13D0 /* TimeFlies.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D404DAA929A40FDD001B13D0 /* TimeFlies.xcdatamodel */,
+			);
+			currentVersion = D404DAA929A40FDD001B13D0 /* TimeFlies.xcdatamodel */;
+			path = TimeFlies.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D404DA6529A40D35001B13D0 /* Project object */;
 }
