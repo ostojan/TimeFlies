@@ -11,18 +11,18 @@ import SwiftUI
 struct TimeFliesApp: App {
     @StateObject private var persistenceController: PersistenceController
     @StateObject private var dataManagerWrapper: EnvironmentObjectProtocolWrapper<any TimeFliesDataManaging>
-    
+
     init() {
         let persistenceController = PersistenceController()
         self._persistenceController = StateObject(wrappedValue: persistenceController)
-        
+
         let dataManager = EnvironmentObjectProtocolWrapper<any TimeFliesDataManaging>(value: CoreDataTimeFliesDataManager(persistenceController: persistenceController))
         self._dataManagerWrapper = StateObject(wrappedValue: dataManager)
     }
-    
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(dataManager: dataManagerWrapper.value)
                 .environmentObject(persistenceController)
                 .environmentObject(dataManagerWrapper)
         }
