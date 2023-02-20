@@ -20,6 +20,7 @@
 		D404DABB29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DABA29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift */; };
 		D404DABD29A42115001B13D0 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DABC29A42115001B13D0 /* ContentViewViewModel.swift */; };
 		D404DAC229A42371001B13D0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC129A42371001B13D0 /* EventCell.swift */; };
+		D404DAC529A4247C001B13D0 /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		D404DABA29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectProtocolWrapper.swift; sourceTree = "<group>"; };
 		D404DABC29A42115001B13D0 /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
 		D404DAC129A42371001B13D0 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		D404DA7F29A40DA2001B13D0 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				D404DAC329A4246F001B13D0 /* Single Elements */,
 				D404DABC29A42115001B13D0 /* ContentViewViewModel.swift */,
 			);
 			path = "View Models";
@@ -138,6 +141,14 @@
 			isa = PBXGroup;
 			children = (
 				D404DAC129A42371001B13D0 /* EventCell.swift */,
+			);
+			path = "Single Elements";
+			sourceTree = "<group>";
+		};
+		D404DAC329A4246F001B13D0 /* Single Elements */ = {
+			isa = PBXGroup;
+			children = (
+				D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */,
 			);
 			path = "Single Elements";
 			sourceTree = "<group>";
@@ -213,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D404DABB29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift in Sources */,
+				D404DAC529A4247C001B13D0 /* EventCellViewModel.swift in Sources */,
 				D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */,
 				D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */,
 				D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */,
