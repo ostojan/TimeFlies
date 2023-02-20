@@ -17,6 +17,7 @@
 		D404DAB029A410F8001B13D0 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAF29A410F8001B13D0 /* PersistenceController.swift */; };
 		D404DAB429A41982001B13D0 /* TimeFliesDataManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAB329A41982001B13D0 /* TimeFliesDataManaging.swift */; };
 		D404DAB629A41A2E001B13D0 /* CoreDataTimeFliesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAB529A41A2E001B13D0 /* CoreDataTimeFliesDataManager.swift */; };
+		D404DABB29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DABA29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		D404DAAF29A410F8001B13D0 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		D404DAB329A41982001B13D0 /* TimeFliesDataManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFliesDataManaging.swift; sourceTree = "<group>"; };
 		D404DAB529A41A2E001B13D0 /* CoreDataTimeFliesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTimeFliesDataManager.swift; sourceTree = "<group>"; };
+		D404DABA29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectProtocolWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				D404DAA529A40F67001B13D0 /* Controllers */,
+				D404DAB929A41F32001B13D0 /* Utils */,
 				D404DA7E29A40D97001B13D0 /* Models */,
 				D404DA8029A40DAF001B13D0 /* Views */,
 				D404DA7F29A40DA2001B13D0 /* View Models */,
@@ -115,6 +118,14 @@
 				D404DAB329A41982001B13D0 /* TimeFliesDataManaging.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D404DAB929A41F32001B13D0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D404DABA29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D404DABB29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift in Sources */,
 				D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */,
 				D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */,
 				D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */,
