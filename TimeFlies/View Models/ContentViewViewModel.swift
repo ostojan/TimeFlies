@@ -18,7 +18,10 @@ class ContentViewViewModel: ObservableObject {
 
     func loadAllEvents() async {
         do {
-            events = try await dataManager.readAll()
+            let events = try await dataManager.readAll()
+            DispatchQueue.main.async {
+                self.events = events
+            }
         } catch {
             fatalError("Cannot load events")
         }
