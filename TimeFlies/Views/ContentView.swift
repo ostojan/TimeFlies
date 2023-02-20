@@ -17,7 +17,7 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(viewModel.events) {
-                Text($0.name ?? "Unknown Name")
+                EventCell(event: $0)
             }
         }
         .task {
