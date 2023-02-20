@@ -14,6 +14,7 @@
 		D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D404DAA829A40FDD001B13D0 /* TimeFlies.xcdatamodeld */; };
 		D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAB29A4101D001B13D0 /* Event+CoreDataClass.swift */; };
 		D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAC29A4101D001B13D0 /* Event+CoreDataProperties.swift */; };
+		D404DAB029A410F8001B13D0 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAAF29A410F8001B13D0 /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D404DAA929A40FDD001B13D0 /* TimeFlies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeFlies.xcdatamodel; sourceTree = "<group>"; };
 		D404DAAB29A4101D001B13D0 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D404DAAC29A4101D001B13D0 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D404DAAF29A410F8001B13D0 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		D404DAA529A40F67001B13D0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D404DAAF29A410F8001B13D0 /* PersistenceController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */,
 				D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */,
 				D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */,
+				D404DAB029A410F8001B13D0 /* PersistenceController.swift in Sources */,
 				D404DA7329A40D35001B13D0 /* ContentView.swift in Sources */,
 				D404DA7129A40D35001B13D0 /* TimeFliesApp.swift in Sources */,
 			);
