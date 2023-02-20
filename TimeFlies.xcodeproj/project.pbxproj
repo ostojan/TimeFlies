@@ -21,6 +21,8 @@
 		D404DABD29A42115001B13D0 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DABC29A42115001B13D0 /* ContentViewViewModel.swift */; };
 		D404DAC229A42371001B13D0 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC129A42371001B13D0 /* EventCell.swift */; };
 		D404DAC529A4247C001B13D0 /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */; };
+		D404DAC729A42844001B13D0 /* EventInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC629A42844001B13D0 /* EventInfoView.swift */; };
+		D404DAC929A42ADE001B13D0 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		D404DABC29A42115001B13D0 /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
 		D404DAC129A42371001B13D0 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
+		D404DAC629A42844001B13D0 /* EventInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoView.swift; sourceTree = "<group>"; };
+		D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			children = (
 				D404DABE29A42333001B13D0 /* Single Elements */,
 				D404DA7229A40D35001B13D0 /* ContentView.swift */,
+				D404DAC629A42844001B13D0 /* EventInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D404DAC129A42371001B13D0 /* EventCell.swift */,
+				D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */,
 			);
 			path = "Single Elements";
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D404DABB29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift in Sources */,
+				D404DAC929A42ADE001B13D0 /* ClearableTextField.swift in Sources */,
 				D404DAC529A4247C001B13D0 /* EventCellViewModel.swift in Sources */,
 				D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */,
+				D404DAC729A42844001B13D0 /* EventInfoView.swift in Sources */,
 				D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */,
 				D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */,
 				D404DAB629A41A2E001B13D0 /* CoreDataTimeFliesDataManager.swift in Sources */,
