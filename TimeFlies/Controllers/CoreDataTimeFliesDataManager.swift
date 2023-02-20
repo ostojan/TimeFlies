@@ -9,13 +9,18 @@ import Foundation
 
 class CoreDataTimeFliesDataManager: TimeFliesDataManaging {
     private let persistenceController: PersistenceController
-    
+
     init(persistenceController: PersistenceController) {
         self.persistenceController = persistenceController
     }
-    
+
     func readAll() async throws -> [Event] {
         let viewContext = persistenceController.viewContext
-        return try viewContext.fetch(Event.fetchRequest())
+        let fetchRequest = Event.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "date", ascending: false),
+            NSSortDescriptor(key: "name", ascending: false),
+        ]
+        return try viewContext.fetch(fetchRequest)
     }
 }
