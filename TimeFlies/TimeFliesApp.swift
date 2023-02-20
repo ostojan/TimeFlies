@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TimeFliesApp: App {
+    @StateObject private var persistenceController = PersistenceController()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(persistenceController)
         }
     }
 }
