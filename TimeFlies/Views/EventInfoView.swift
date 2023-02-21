@@ -56,6 +56,7 @@ struct EventInfoView: View {
                     } label: {
                         Text("Done")
                     }
+                    .disabled(!viewModel.canSaveData)
                 }
             }
             .onAppear {

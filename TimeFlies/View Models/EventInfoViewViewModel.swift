@@ -13,6 +13,9 @@ class EventInfoViewViewModel: ObservableObject {
     private let navigationTitle: String
     @Published var name = ""
     @Published var date = Date.now
+    var canSaveData: Bool {
+        !name.isEmpty
+    }
 
     init(dataManager: any TimeFliesDataManaging, event: Event?) {
         self.dataManager = dataManager
