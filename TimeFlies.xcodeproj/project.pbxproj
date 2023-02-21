@@ -145,8 +145,8 @@
 		D404DABE29A42333001B13D0 /* Single Elements */ = {
 			isa = PBXGroup;
 			children = (
-				D404DAC129A42371001B13D0 /* EventCell.swift */,
 				D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */,
+				D404DAC129A42371001B13D0 /* EventCell.swift */,
 			);
 			path = "Single Elements";
 			sourceTree = "<group>";
