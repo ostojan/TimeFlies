@@ -49,8 +49,10 @@ struct EventInfoView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
-                        // TODO: Save or update event
-                        dismiss()
+                        Task {
+                            await viewModel.save()
+                            dismiss()
+                        }
                     } label: {
                         Text("Done")
                     }

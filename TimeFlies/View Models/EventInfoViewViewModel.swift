@@ -25,4 +25,17 @@ class EventInfoViewViewModel: ObservableObject {
             self.navigationTitle = "New Event"
         }
     }
+
+    func save() async {
+        do {
+            if let event = event {
+                let _ = try await dataManager.update(event: event, name: name, date: date)
+            } else {
+                let _ = try await dataManager.createEvent(name: name, date: date)
+            }
+        } catch {
+            // TODO: Handle error properly
+            fatalError()
+        }
+    }
 }
