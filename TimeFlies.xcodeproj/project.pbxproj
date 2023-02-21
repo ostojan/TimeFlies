@@ -23,6 +23,7 @@
 		D404DAC529A4247C001B13D0 /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */; };
 		D404DAC729A42844001B13D0 /* EventInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC629A42844001B13D0 /* EventInfoView.swift */; };
 		D404DAC929A42ADE001B13D0 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */; };
+		D49B840329A550A700068DCF /* EventInfoViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
 		D404DAC629A42844001B13D0 /* EventInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoView.swift; sourceTree = "<group>"; };
 		D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
+		D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				D404DAC329A4246F001B13D0 /* Single Elements */,
 				D404DABC29A42115001B13D0 /* ContentViewViewModel.swift */,
+				D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				D404DAC929A42ADE001B13D0 /* ClearableTextField.swift in Sources */,
 				D404DAC529A4247C001B13D0 /* EventCellViewModel.swift in Sources */,
 				D404DAAE29A4101D001B13D0 /* Event+CoreDataProperties.swift in Sources */,
+				D49B840329A550A700068DCF /* EventInfoViewViewModel.swift in Sources */,
 				D404DAC729A42844001B13D0 /* EventInfoView.swift in Sources */,
 				D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */,
 				D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel: ContentViewViewModel
+    @EnvironmentObject private var dataManagerWrapper: EnvironmentObjectProtocolWrapper<any TimeFliesDataManaging>
 
     init(dataManager: any TimeFliesDataManaging) {
         self._viewModel = StateObject(wrappedValue: ContentViewViewModel(dataManager: dataManager))
@@ -37,7 +38,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $viewModel.showAddEventSheet) {
-                EventInfoView()
+                EventInfoView(dataManager: dataManagerWrapper.value)
             }
         }
         .task {

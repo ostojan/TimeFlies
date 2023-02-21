@@ -9,15 +9,18 @@ import SwiftUI
 
 struct EventInfoView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var name = ""
-    @State private var date = Date.now
+    @StateObject private var viewModel: EventInfoViewViewModel
     @FocusState private var nameFieldFocused: Bool
+
+    init(dataManager: any TimeFliesDataManaging, event: Event? = nil) {
+        self._viewModel = StateObject(wrappedValue: EventInfoViewViewModel(dataManager: dataManager, event: event))
+    }
 
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    ClearableTextField("Event name", text: $name)
+                    ClearableTextField("Event name", text: $viewModel.name)
                         .focused($nameFieldFocused)
                         .multilineTextAlignment(.center)
                         .font(.title)
@@ -30,7 +33,7 @@ struct EventInfoView: View {
                 }
 
                 Section {
-                    DatePicker("Date", selection: $date, displayedComponents: .date)
+                    DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
                         .datePickerStyle(.wheel)
                 }
             }
@@ -62,6 +65,9 @@ struct EventInfoView: View {
 
 struct EventInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        EventInfoView()
+        let persistenceController = PersistenceController.preview
+        let dataManager = CoreDataTimeFliesDataManager(persistenceController: persistenceController)
+
+        return EventInfoView(dataManager: dataManager)
     }
 }
