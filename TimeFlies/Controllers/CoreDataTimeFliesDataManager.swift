@@ -21,7 +21,7 @@ class CoreDataTimeFliesDataManager: TimeFliesDataManaging {
         self.persistenceController = persistenceController
     }
 
-    func readAll() async throws {
+    func readAllEvents() async throws {
         currentEvents = try persistenceController.viewContext.fetch(Event.fetchRequest())
         sendEvents()
     }

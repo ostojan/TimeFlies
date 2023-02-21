@@ -11,7 +11,7 @@ import Foundation
 protocol TimeFliesDataManaging {
     var events: AnyPublisher<[Event], Never> { get }
 
-    func readAll() async throws
+    func readAllEvents() async throws
     func createEvent(name: String, date: Date) async throws
     func update(event: Event, name: String, date: Date) async throws
 }

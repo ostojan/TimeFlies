@@ -29,7 +29,7 @@ class ContentViewViewModel: ObservableObject {
 
     func loadAllEvents() async {
         do {
-            try await dataManager.readAll()
+            try await dataManager.readAllEvents()
         } catch {
             fatalError("Cannot load events")
         }
