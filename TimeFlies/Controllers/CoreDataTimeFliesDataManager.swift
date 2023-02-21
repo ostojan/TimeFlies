@@ -5,36 +5,46 @@
 //  Created by ostojan on 20/02/2023.
 //
 
+import Combine
 import Foundation
 
 class CoreDataTimeFliesDataManager: TimeFliesDataManaging {
+    private let eventsPublisher = PassthroughSubject<[Event], Never>()
     private let persistenceController: PersistenceController
+    private var currentEvents: [Event] = []
+
+    var events: AnyPublisher<[Event], Never> {
+        eventsPublisher.eraseToAnyPublisher()
+    }
 
     init(persistenceController: PersistenceController) {
         self.persistenceController = persistenceController
     }
 
-    func readAll() async throws -> [Event] {
-        let viewContext = persistenceController.viewContext
-        let fetchRequest = Event.fetchRequest()
-        fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "date", ascending: false),
-            NSSortDescriptor(key: "name", ascending: false),
-        ]
-        return try viewContext.fetch(fetchRequest)
+    func readAll() async throws {
+        currentEvents = try persistenceController.viewContext.fetch(Event.fetchRequest())
+        sendEvents()
     }
 
-    func createEvent(name: String, date: Date) async throws -> Event {
+    func createEvent(name: String, date: Date) async throws {
         let event = Event(context: persistenceController.viewContext)
-        return try await update(event: event, name: name, date: date)
+        try await update(event: event, name: name, date: date)
     }
 
-    func update(event: Event, name: String, date: Date) async throws -> Event {
+    func update(event: Event, name: String, date: Date) async throws {
         event.name = name
-        event.date = date
-        
+        event.date = date.startOfDay
+
         try persistenceController.save()
-        
-        return event
+
+        if !currentEvents.contains(event) {
+            currentEvents.append(event)
+        }
+
+        sendEvents()
+    }
+
+    private func sendEvents() {
+        eventsPublisher.send(currentEvents)
     }
 }
