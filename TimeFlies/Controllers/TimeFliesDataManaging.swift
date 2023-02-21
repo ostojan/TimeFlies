@@ -9,4 +9,6 @@ import Foundation
 
 protocol TimeFliesDataManaging {
     func readAll() async throws -> [Event]
+    func createEvent(name: String, date: Date) async throws -> Event
+    func update(event: Event, name: String, date: Date) async throws -> Event
 }

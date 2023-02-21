@@ -23,4 +23,18 @@ class CoreDataTimeFliesDataManager: TimeFliesDataManaging {
         ]
         return try viewContext.fetch(fetchRequest)
     }
+
+    func createEvent(name: String, date: Date) async throws -> Event {
+        let event = Event(context: persistenceController.viewContext)
+        return try await update(event: event, name: name, date: date)
+    }
+
+    func update(event: Event, name: String, date: Date) async throws -> Event {
+        event.name = name
+        event.date = date
+        
+        try persistenceController.save()
+        
+        return event
+    }
 }
