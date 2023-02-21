@@ -24,6 +24,7 @@
 		D404DAC729A42844001B13D0 /* EventInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC629A42844001B13D0 /* EventInfoView.swift */; };
 		D404DAC929A42ADE001B13D0 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */; };
 		D49B840329A550A700068DCF /* EventInfoViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */; };
+		D49B840529A5685400068DCF /* Date+StartOfDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B840429A5685400068DCF /* Date+StartOfDay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		D404DAC629A42844001B13D0 /* EventInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoView.swift; sourceTree = "<group>"; };
 		D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
 		D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewViewModel.swift; sourceTree = "<group>"; };
+		D49B840429A5685400068DCF /* Date+StartOfDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StartOfDay.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		D404DAB929A41F32001B13D0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D49B840429A5685400068DCF /* Date+StartOfDay.swift */,
 				D404DABA29A41F54001B13D0 /* EnvironmentObjectProtocolWrapper.swift */,
 			);
 			path = Utils;
@@ -242,6 +245,7 @@
 				D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */,
 				D404DAB629A41A2E001B13D0 /* CoreDataTimeFliesDataManager.swift in Sources */,
 				D404DAB029A410F8001B13D0 /* PersistenceController.swift in Sources */,
+				D49B840529A5685400068DCF /* Date+StartOfDay.swift in Sources */,
 				D404DAC229A42371001B13D0 /* EventCell.swift in Sources */,
 				D404DA7329A40D35001B13D0 /* ContentView.swift in Sources */,
 				D404DA7129A40D35001B13D0 /* TimeFliesApp.swift in Sources */,
