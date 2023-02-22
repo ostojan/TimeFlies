@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct EventCell: View {
-    @StateObject private var viewModel: EventCellViewModel
+    private let viewModel: EventCellViewModel
 
     init(event: Event) {
-        self._viewModel = StateObject(wrappedValue: EventCellViewModel(event: event))
+        self.viewModel = EventCellViewModel(event: event)
     }
 
     var body: some View {
