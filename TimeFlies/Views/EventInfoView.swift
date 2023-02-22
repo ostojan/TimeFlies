@@ -38,7 +38,7 @@ struct EventInfoView: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("New Event")
+            .navigationTitle(viewModel.navigationTitle)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(role: .cancel) {

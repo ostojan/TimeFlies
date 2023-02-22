@@ -10,7 +10,7 @@ import Foundation
 class EventInfoViewViewModel: ObservableObject {
     private let dataManager: any TimeFliesDataManaging
     private let event: Event?
-    private let navigationTitle: String
+    let navigationTitle: String
     @Published var name = ""
     @Published var date = Date.now
     var canSaveData: Bool {
