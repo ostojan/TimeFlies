@@ -12,6 +12,7 @@ class ContentViewViewModel: ObservableObject {
     private let dataManager: any TimeFliesDataManaging
     @Published private(set) var events: [Event] = []
     @Published var showAddEventSheet = false
+    @Published var eventToShowDetails: Event?
     private var cancellable: AnyCancellable?
 
     init(dataManager: any TimeFliesDataManaging) {

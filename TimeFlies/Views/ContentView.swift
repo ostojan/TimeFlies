@@ -18,8 +18,15 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.events) {
-                    EventCell(event: $0)
+                ForEach(viewModel.events) { event in
+                    EventCell(event: event)
+                        .contextMenu {
+                            Button {
+                                viewModel.eventToShowDetails = event
+                            } label: {
+                                Text("Show Event Info")
+                            }
+                        }
                 }
             }
             .navigationTitle("Time Flies")
@@ -36,6 +43,9 @@ struct ContentView: View {
                         .labelStyle(.titleAndIcon)
                     }
                 }
+            }
+            .sheet(item: $viewModel.eventToShowDetails) { event in
+                EventInfoView(dataManager: dataManagerWrapper.value, event: event)
             }
             .sheet(isPresented: $viewModel.showAddEventSheet) {
                 EventInfoView(dataManager: dataManagerWrapper.value)
