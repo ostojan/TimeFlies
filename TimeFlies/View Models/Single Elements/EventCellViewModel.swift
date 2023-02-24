@@ -18,7 +18,21 @@ class EventCellViewModel: ObservableObject {
         event.wrappedName
     }
 
-    var formattedDate: String {
-        event.wrappedDate.formatted(date: .abbreviated, time: .omitted)
+    private var numberOfDays: Int {
+        guard let numberOfDays = event.wrappedDate.startOfDay.numDaysTo(Date.now.startOfDay) else {
+            fatalError()
+        }
+        return numberOfDays
+    }
+
+    var numberOfDaysFormatted: String {
+        abs(numberOfDays).formatted()
+    }
+
+    var numberOfDaysCaption: String {
+        let numberOfDays = numberOfDays
+        let day = abs(numberOfDays) == 1 ? "day" : "days"
+        let suffix = numberOfDays >= 0 ? "since" : "to"
+        return "\(day) \(suffix)".trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

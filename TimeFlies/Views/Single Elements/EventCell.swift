@@ -17,8 +17,16 @@ struct EventCell: View {
     var body: some View {
         HStack {
             Text(viewModel.name)
+                .lineLimit(1)
+                .font(.title)
             Spacer()
-            Text(viewModel.formattedDate)
+            VStack {
+                Text(viewModel.numberOfDaysFormatted)
+                    .font(.headline)
+                Text(viewModel.numberOfDaysCaption)
+                    .font(.caption)
+            }
+            .frame(minWidth: 70)
         }
     }
 }
@@ -30,6 +38,7 @@ struct EventCell_Previews: PreviewProvider {
         event.name = "Event Cell"
         event.date = Date.now
         return EventCell(event: event)
+            .padding()
             .previewLayout(.sizeThatFits)
     }
 }
