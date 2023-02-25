@@ -23,6 +23,7 @@
 		D404DAC529A4247C001B13D0 /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */; };
 		D404DAC729A42844001B13D0 /* EventInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC629A42844001B13D0 /* EventInfoView.swift */; };
 		D404DAC929A42ADE001B13D0 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */; };
+		D41F758329A8DDEB00DE252D /* RoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F758229A8DDEB00DE252D /* RoundedBorder.swift */; };
 		D49B840329A550A700068DCF /* EventInfoViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */; };
 		D49B840529A5685400068DCF /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B840429A5685400068DCF /* Date+Utils.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
 		D404DAC629A42844001B13D0 /* EventInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoView.swift; sourceTree = "<group>"; };
 		D404DAC829A42ADE001B13D0 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
+		D41F758229A8DDEB00DE252D /* RoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorder.swift; sourceTree = "<group>"; };
 		D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewViewModel.swift; sourceTree = "<group>"; };
 		D49B840429A5685400068DCF /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 		D404DA8029A40DAF001B13D0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D41F758429A8DDF200DE252D /* Modifiers */,
 				D404DABE29A42333001B13D0 /* Single Elements */,
 				D404DA7229A40D35001B13D0 /* ContentView.swift */,
 				D404DAC629A42844001B13D0 /* EventInfoView.swift */,
@@ -163,6 +166,14 @@
 				D404DAC429A4247C001B13D0 /* EventCellViewModel.swift */,
 			);
 			path = "Single Elements";
+			sourceTree = "<group>";
+		};
+		D41F758429A8DDF200DE252D /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D41F758229A8DDEB00DE252D /* RoundedBorder.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				D49B840329A550A700068DCF /* EventInfoViewViewModel.swift in Sources */,
 				D404DAC729A42844001B13D0 /* EventInfoView.swift in Sources */,
 				D404DAAA29A40FDD001B13D0 /* TimeFlies.xcdatamodeld in Sources */,
+				D41F758329A8DDEB00DE252D /* RoundedBorder.swift in Sources */,
 				D404DAAD29A4101D001B13D0 /* Event+CoreDataClass.swift in Sources */,
 				D404DAB629A41A2E001B13D0 /* CoreDataTimeFliesDataManager.swift in Sources */,
 				D404DAB029A410F8001B13D0 /* PersistenceController.swift in Sources */,
