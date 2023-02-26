@@ -56,7 +56,11 @@ struct ContentView: View {
     @ViewBuilder var eventsList: some View {
         ForEach(viewModel.events) { event in
             HStack {
-                EditModeButton(role: .destructive) {} label: {
+                EditModeButton(role: .destructive) {
+                    Task {
+                        await viewModel.delete(event: event)
+                    }
+                } label: {
                     Label("Delete", systemImage: "trash.fill")
                         .labelStyle(.iconOnly)
                 }

@@ -35,4 +35,13 @@ class ContentViewViewModel: ObservableObject {
             fatalError("Cannot load events")
         }
     }
+    
+    func delete(event: Event) async {
+        do {
+            try await dataManager.delete(event: event)
+        } catch {
+            // TODO: Handle error properly
+            fatalError()
+        }
+    }
 }
