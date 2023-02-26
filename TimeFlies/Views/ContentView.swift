@@ -25,6 +25,9 @@ struct ContentView: View {
             }
             .navigationTitle("Time Flies")
             .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    EditButton()
+                }
                 ToolbarItem(placement: .bottomBar) {
                     Button {
                         viewModel.showAddEventSheet.toggle()
@@ -52,18 +55,24 @@ struct ContentView: View {
 
     @ViewBuilder var eventsList: some View {
         ForEach(viewModel.events) { event in
-            EventCell(event: event)
-                .padding()
-                .background()
-                .roundedBorder(cornerRadius: 16, lineWidth: 2)
-                .transition(.opacity.animation(.easeInOut))
-                .contextMenu {
-                    Button {
-                        viewModel.eventToShowDetails = event
-                    } label: {
-                        Text("Show Event Info")
-                    }
+            HStack {
+                EditModeButton(role: .destructive) {} label: {
+                    Label("Delete", systemImage: "trash.fill")
+                        .labelStyle(.iconOnly)
                 }
+                EventCell(event: event)
+            }
+            .padding()
+            .background()
+            .roundedBorder(cornerRadius: 16, lineWidth: 2)
+            .transition(.opacity.animation(.easeInOut))
+            .contextMenu {
+                Button {
+                    viewModel.eventToShowDetails = event
+                } label: {
+                    Text("Show Event Info")
+                }
+            }
         }
         .animation(.default, value: viewModel.events)
     }
