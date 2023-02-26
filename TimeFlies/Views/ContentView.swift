@@ -16,18 +16,12 @@ struct ContentView: View {
     }
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(viewModel.events) { event in
-                    EventCell(event: event)
-                        .contextMenu {
-                            Button {
-                                viewModel.eventToShowDetails = event
-                            } label: {
-                                Text("Show Event Info")
-                            }
-                        }
+        NavigationStack {
+            ScrollView {
+                LazyVStack(alignment: .center) {
+                    eventsList
                 }
+                .padding()
             }
             .navigationTitle("Time Flies")
             .toolbar {
@@ -54,6 +48,24 @@ struct ContentView: View {
         .task {
             await viewModel.loadAllEvents()
         }
+    }
+
+    @ViewBuilder var eventsList: some View {
+        ForEach(viewModel.events) { event in
+            EventCell(event: event)
+                .padding()
+                .background()
+                .roundedBorder(cornerRadius: 16, lineWidth: 2)
+                .transition(.opacity.animation(.easeInOut))
+                .contextMenu {
+                    Button {
+                        viewModel.eventToShowDetails = event
+                    } label: {
+                        Text("Show Event Info")
+                    }
+                }
+        }
+        .animation(.default, value: viewModel.events)
     }
 }
 
