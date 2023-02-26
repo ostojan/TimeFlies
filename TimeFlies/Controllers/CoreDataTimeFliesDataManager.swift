@@ -26,6 +26,13 @@ class CoreDataTimeFliesDataManager: TimeFliesDataManaging {
         sendEvents()
     }
 
+    func delete(event: Event) async throws {
+        persistenceController.viewContext.delete(event)
+        try persistenceController.save()
+        currentEvents.removeAll { $0 == event }
+        sendEvents()
+    }
+
     func createEvent(name: String, date: Date) async throws {
         let event = Event(context: persistenceController.viewContext)
         try await update(event: event, name: name, date: date)

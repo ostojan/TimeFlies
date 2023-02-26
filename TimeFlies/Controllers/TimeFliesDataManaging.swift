@@ -14,4 +14,5 @@ protocol TimeFliesDataManaging {
     func readAllEvents() async throws
     func createEvent(name: String, date: Date) async throws
     func update(event: Event, name: String, date: Date) async throws
+    func delete(event: Event) async throws
 }
