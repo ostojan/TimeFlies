@@ -65,7 +65,11 @@ struct ContentView: View {
                         .labelStyle(.iconOnly)
                 }
                 .showOnlyInEditMode()
-                EventCell(event: event)
+                NavigationLink {
+                    EventDetailsView(event: event)
+                } label: {
+                    EventCell(event: event)
+                }
                 Button {
                     viewModel.eventToShowDetails = event
                 } label: {
