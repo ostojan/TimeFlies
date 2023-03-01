@@ -65,6 +65,12 @@ struct ContentView: View {
                         .labelStyle(.iconOnly)
                 }
                 EventCell(event: event)
+                EditModeButton {
+                    viewModel.eventToShowDetails = event
+                } label: {
+                    Label("Details", systemImage: "info.circle.fill")
+                        .labelStyle(.iconOnly)
+                }
             }
             .padding()
             .background()
