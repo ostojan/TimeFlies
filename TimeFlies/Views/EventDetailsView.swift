@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct EventDetailsView: View {
-    private var viewModel: EventDetailsViewViewModel
+    @EnvironmentObject private var dataManagerWrapper: EnvironmentObjectProtocolWrapper<any TimeFliesDataManaging>
+    @StateObject private var viewModel: EventDetailsViewViewModel
 
     init(event: Event) {
-        self.viewModel = EventDetailsViewViewModel(event: event)
+        self._viewModel = StateObject(wrappedValue: EventDetailsViewViewModel(event: event))
     }
 
     var body: some View {
@@ -22,7 +23,9 @@ struct EventDetailsView: View {
         .navigationTitle(viewModel.name)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button {} label: {
+                Button {
+                    viewModel.showEditSheet.toggle()
+                } label: {
                     Label {
                         Text("Edit")
                     } icon: {
@@ -31,17 +34,24 @@ struct EventDetailsView: View {
                 }
             }
         }
+        .sheet(isPresented: $viewModel.showEditSheet) {
+            EventInfoView(dataManager: dataManagerWrapper.value, event: viewModel.event)
+        }
     }
 }
 
 struct EventDetails_Previews: PreviewProvider {
     static var previews: some View {
         let persistenceController = PersistenceController.preview
+        let dataManager = CoreDataTimeFliesDataManager(persistenceController: persistenceController)
         let event = Event(context: persistenceController.viewContext)
         event.name = "Event Name"
         event.date = Date.now
-        return NavigationView {
-            EventDetailsView(event: event)
-        }
+        try! persistenceController.save()
+        return
+            NavigationView {
+                EventDetailsView(event: event)
+            }
+            .environmentObject(EnvironmentObjectProtocolWrapper<any TimeFliesDataManaging>(value: dataManager))
     }
 }

@@ -7,8 +7,9 @@
 
 import Foundation
 
-class EventDetailsViewViewModel {
+class EventDetailsViewViewModel: ObservableObject {
     let event: Event
+    @Published var showEditSheet = false
 
     init(event: Event) {
         self.event = event
