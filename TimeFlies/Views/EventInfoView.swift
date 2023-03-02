@@ -36,6 +36,12 @@ struct EventInfoView: View {
                     DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
                         .datePickerStyle(.wheel)
                 }
+
+                Section {
+                    TextEditor(text: $viewModel.notes)
+                } header: {
+                    Text("Notes")
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(viewModel.navigationTitle)

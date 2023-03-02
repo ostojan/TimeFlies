@@ -13,6 +13,7 @@ class EventInfoViewViewModel: ObservableObject {
     let navigationTitle: String
     @Published var name = ""
     @Published var date = Date.now
+    @Published var notes = ""
     var canSaveData: Bool {
         !name.isEmpty
     }
@@ -24,6 +25,7 @@ class EventInfoViewViewModel: ObservableObject {
             self.navigationTitle = "Event Info"
             self.name = event.wrappedName
             self.date = event.wrappedDate
+            self.notes = event.wrappedNotes
         } else {
             self.navigationTitle = "New Event"
         }
@@ -32,9 +34,9 @@ class EventInfoViewViewModel: ObservableObject {
     func save() async {
         do {
             if let event = event {
-                let _ = try await dataManager.update(event: event, name: name, date: date)
+                let _ = try await dataManager.update(event: event, name: name, date: date, notes: notes)
             } else {
-                let _ = try await dataManager.createEvent(name: name, date: date)
+                let _ = try await dataManager.createEvent(name: name, date: date, notes: notes)
             }
         } catch {
             // TODO: Handle error properly
