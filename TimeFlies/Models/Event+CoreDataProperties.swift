@@ -16,6 +16,7 @@ public extension Event {
 
     @NSManaged var name: String?
     @NSManaged var date: Date?
+    @NSManaged var notes: String?
 
     var wrappedName: String {
         name ?? "Unknown Name"
@@ -23,6 +24,10 @@ public extension Event {
 
     var wrappedDate: Date {
         date ?? Date.now
+    }
+
+    var wrappedNotes: String {
+        notes ?? ""
     }
 }
 
