@@ -122,8 +122,8 @@
 			children = (
 				D404DAC329A4246F001B13D0 /* Single Elements */,
 				D404DABC29A42115001B13D0 /* ContentViewViewModel.swift */,
-				D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */,
 				D494C9F629AFE77C0022EE5E /* EventDetailsViewViewModel.swift */,
+				D49B840229A550A700068DCF /* EventInfoViewViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
