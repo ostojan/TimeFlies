@@ -17,10 +17,20 @@ struct EventDetailsView: View {
 
     var body: some View {
         VStack {
+            Text(viewModel.name)
+                .font(.largeTitle)
+            Text(viewModel.dateLead)
+                .font(.title2)
             Text(viewModel.dateFormatted)
                 .font(.title)
+            Text(viewModel.notesLead)
+                .font(.caption)
+                .bold()
+            Text(viewModel.notes)
+            Spacer()
         }
-        .navigationTitle(viewModel.name)
+        .padding(.horizontal)
+        .navigationTitle("Details")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
