@@ -17,57 +17,55 @@ struct EventInfoView: View {
     }
 
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    ClearableTextField("Event name", text: $viewModel.name)
-                        .focused($nameFieldFocused)
-                        .multilineTextAlignment(.center)
-                        .font(.title)
-                        .bold()
-                        .padding()
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(.ultraThinMaterial)
-                        }
-                }
+        Form {
+            Section {
+                ClearableTextField("Event name", text: $viewModel.name)
+                    .focused($nameFieldFocused)
+                    .multilineTextAlignment(.center)
+                    .font(.title)
+                    .bold()
+                    .padding()
+                    .background {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.ultraThinMaterial)
+                    }
+            }
 
-                Section {
-                    DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
-                        .datePickerStyle(.wheel)
-                }
+            Section {
+                DatePicker("Date", selection: $viewModel.date, displayedComponents: .date)
+                    .datePickerStyle(.wheel)
+            }
 
-                Section {
-                    TextEditor(text: $viewModel.notes)
-                } header: {
-                    Text("Notes")
+            Section {
+                TextEditor(text: $viewModel.notes)
+            } header: {
+                Text("Notes")
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(viewModel.navigationTitle)
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button(role: .cancel) {
+                    dismiss()
+                } label: {
+                    Text("Cancel")
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(viewModel.navigationTitle)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(role: .cancel) {
+            ToolbarItem(placement: .confirmationAction) {
+                Button {
+                    Task {
+                        await viewModel.save()
                         dismiss()
-                    } label: {
-                        Text("Cancel")
                     }
+                } label: {
+                    Text("Done")
                 }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button {
-                        Task {
-                            await viewModel.save()
-                            dismiss()
-                        }
-                    } label: {
-                        Text("Done")
-                    }
-                    .disabled(!viewModel.canSaveData)
-                }
+                .disabled(!viewModel.canSaveData)
             }
-            .onAppear {
-                nameFieldFocused = true
-            }
+        }
+        .onAppear {
+            nameFieldFocused = true
         }
     }
 }

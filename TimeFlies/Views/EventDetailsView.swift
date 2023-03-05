@@ -45,7 +45,9 @@ struct EventDetailsView: View {
             }
         }
         .sheet(isPresented: $viewModel.showEditSheet) {
-            EventInfoView(dataManager: dataManagerWrapper.value, event: viewModel.event)
+            NavigationView {
+                EventInfoView(dataManager: dataManagerWrapper.value, event: viewModel.event)
+            }
         }
     }
 }

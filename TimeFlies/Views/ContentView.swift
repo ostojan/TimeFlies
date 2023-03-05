@@ -42,10 +42,14 @@ struct ContentView: View {
                 }
             }
             .sheet(item: $viewModel.eventToShowDetails) { event in
-                EventInfoView(dataManager: dataManagerWrapper.value, event: event)
+                NavigationView {
+                    EventInfoView(dataManager: dataManagerWrapper.value, event: event)
+                }
             }
             .sheet(isPresented: $viewModel.showAddEventSheet) {
-                EventInfoView(dataManager: dataManagerWrapper.value)
+                NavigationView {
+                    EventInfoView(dataManager: dataManagerWrapper.value)
+                }
             }
         }
         .task {
