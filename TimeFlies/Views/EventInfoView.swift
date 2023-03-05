@@ -37,6 +37,18 @@ struct EventInfoView: View {
             }
 
             Section {
+                ColorPicker(selection: $viewModel.color, supportsOpacity: false) {
+                    Label {
+                        Text("Label Color")
+                    } icon: {
+                        Image(systemName: "tag.fill")
+                            .foregroundColor(viewModel.color)
+                            .animation(.default, value: viewModel.color)
+                    }
+                }
+            }
+
+            Section {
                 TextEditor(text: $viewModel.notes)
             } header: {
                 Text("Notes")
