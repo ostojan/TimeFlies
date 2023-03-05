@@ -74,6 +74,7 @@ struct ContentView: View {
                 } label: {
                     EventCell(event: event)
                 }
+                .foregroundColor(event.color)
                 Button {
                     viewModel.eventToShowDetails = event
                 } label: {
@@ -84,7 +85,7 @@ struct ContentView: View {
             }
             .padding()
             .background()
-            .roundedBorder(cornerRadius: 16, lineWidth: 2)
+            .roundedBorder(cornerRadius: 16, style: event.color, lineWidth: 2)
             .transition(.opacity.animation(.easeInOut))
             .contextMenu {
                 Button {
