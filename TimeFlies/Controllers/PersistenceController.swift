@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 class PersistenceController: ObservableObject {
     let container: NSPersistentContainer
@@ -38,6 +39,14 @@ extension PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.viewContext
 
+        let colors = [
+            Color.purple,
+            Color.green,
+            Color.orange,
+            Color.cyan,
+            Color.pink,
+        ]
+
         let calendar = Calendar.current
         var id = 1
         for num in -2 ... 2 {
@@ -50,6 +59,7 @@ extension PersistenceController {
                 fatalError()
             }
             event.date = calendar.startOfDay(for: eventDate)
+            event.color = colors[id % colors.count]
             id += 1
         }
 
