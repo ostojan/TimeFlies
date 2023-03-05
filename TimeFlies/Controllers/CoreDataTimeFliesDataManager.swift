@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import SwiftUI
 
 class CoreDataTimeFliesDataManager: TimeFliesDataManaging {
     private let eventsPublisher = PassthroughSubject<[Event], Never>()
@@ -33,15 +34,16 @@ class CoreDataTimeFliesDataManager: TimeFliesDataManaging {
         sendEvents()
     }
 
-    func createEvent(name: String, date: Date, notes: String?) async throws {
+    func createEvent(name: String, date: Date, notes: String?, color: Color) async throws {
         let event = Event(context: persistenceController.viewContext)
-        try await update(event: event, name: name, date: date, notes: notes)
+        try await update(event: event, name: name, date: date, notes: notes, color: color)
     }
 
-    func update(event: Event, name: String, date: Date, notes: String?) async throws {
+    func update(event: Event, name: String, date: Date, notes: String?, color: Color) async throws {
         event.name = name
         event.date = date.startOfDay
         event.notes = notes
+        event.color = color
 
         try persistenceController.save()
 

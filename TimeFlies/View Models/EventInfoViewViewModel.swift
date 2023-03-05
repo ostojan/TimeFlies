@@ -34,9 +34,9 @@ class EventInfoViewViewModel: ObservableObject {
     func save() async {
         do {
             if let event = event {
-                let _ = try await dataManager.update(event: event, name: name, date: date, notes: notes)
+                let _ = try await dataManager.update(event: event, name: name, date: date, notes: notes, color: .black)
             } else {
-                let _ = try await dataManager.createEvent(name: name, date: date, notes: notes)
+                let _ = try await dataManager.createEvent(name: name, date: date, notes: notes, color: .black)
             }
         } catch {
             // TODO: Handle error properly
