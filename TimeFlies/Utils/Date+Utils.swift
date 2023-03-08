@@ -15,4 +15,8 @@ extension Date {
     func numDaysTo(_ date: Date) -> Int? {
         Calendar.current.dateComponents([.day], from: self, to: date).day
     }
+
+    func yearMonthAndDayComponentsTo(_ date: Date) -> DateComponents {
+        Calendar.current.dateComponents([.year, .month, .day], from: self, to: date)
+    }
 }
