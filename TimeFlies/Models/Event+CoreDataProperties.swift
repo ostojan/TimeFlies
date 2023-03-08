@@ -35,6 +35,10 @@ public extension Event {
         notes ?? ""
     }
 
+    var alreadyHappened: Bool {
+        wrappedDate.startOfDay < Date.now.startOfDay
+    }
+
     var color: Color {
         get {
             Color(red: red, green: green, blue: blue)

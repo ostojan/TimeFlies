@@ -20,8 +20,10 @@ class EventDetailsViewViewModel: ObservableObject {
     }
 
     var dateLead: String {
-        // TODO: Handle future events
-        "Took Place"
+        if event.alreadyHappened {
+            return "Took Place"
+        }
+        return "Takes Place"
     }
 
     var dateFormatted: String {
@@ -33,8 +35,9 @@ class EventDetailsViewViewModel: ObservableObject {
     }
 
     var time: String {
-        // TODO: Handle future events
-        let components = event.wrappedDate.yearMonthAndDayComponentsTo(Date.now.startOfDay)
+        let components = event.alreadyHappened
+            ? event.wrappedDate.yearMonthAndDayComponentsTo(Date.now.startOfDay)
+            : Date.now.startOfDay.yearMonthAndDayComponentsTo(event.wrappedDate)
         guard let days = components.day,
               let months = components.month,
               let years = components.year
@@ -55,7 +58,7 @@ class EventDetailsViewViewModel: ObservableObject {
 
         resultString += "\(days) "
         resultString += days == 1 ? "day " : "days "
-        resultString += "ago"
+        resultString += event.alreadyHappened ? "ago" : "from now"
         return resultString.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
